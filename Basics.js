@@ -1,101 +1,104 @@
 //variable and data types
+
 let name="tarun";
 const rollno=1;
-let bool = true;
-var mood = null;
-let project;
+let boolean = true;
+var projects = null;
+let skills;
 
 console.log(typeof name);
 console.log(typeof rollno);
-console.log(typeof bool);
-console.log(typeof mood);
-console.log(typeof project); 
+console.log(typeof boolean);
+console.log(typeof projects);
+console.log(typeof skills); 
 
 //hoisting demo
 
-// console.log(iamvar);
-// console.log(iamlet);        //here var is hosted that's by the declaration moved to the top  
-// var iamvar =1;              //this is the reason let showing error and var showing value undefine 
-// let iamlet =1;  
-
+// console.log(iamvar);                    // The variable declared with 'var' is hoisted to the top of its scope,
+// console.log(iamlet);                    // which is why it appears as 'undefined' when accessed before assignment.
+// var iamvar =1;                          // In contrast, using 'let' results in a ReferenceError because it is not
+// let iamlet =1;                          // initialized until its declaration is evaluated (temporal dead zone).
+                     
 //user greeting
 
-let username = prompt("what is your name?");
-let userage = prompt(`${username} tell me your age`);
-if(userage<18){
-    alert(`hey ${username}, you are a teen!`);
+let user = prompt("what is your name?");
+let age = prompt(`${user} tell me your age`);
+if(age<18){
+    alert(`hey ${user}, you are a teen!`);
 }
-else if(userage >= 18 && userage < 60) {
-    alert(`welcome ${username}, you are an adult`);
+else if(age >= 18 && age < 60) {
+    alert(`welcome ${user}, you are an adult`);
 }
 else{
-    alert(`hello ${username}, you are a senior citizen`);    
+    alert(`hello ${user}, you are a senior citizen`);    
 }
 
-//looping numbers
+//loop
 
-for(let i=1;i<11;i++){
-    console.log(i);
+for(let a=1;a<11;a++){
+    console.log(a);
 }
 
-var j=2;
-while(j <= 20){
-    console.log(j);
-    j+=2;
+var b=2;
+while(b <= 20){
+    console.log(b);
+    b+=2;
 }
 
-var k=10
+var c=10
 do{
-    console.log(k);
-    k-=1;
+    console.log(c);
+    c-=1;
 }
-while(k >= 1);
+while(c >= 1);
 
 //functions
 
 function add(a,b){
-    return a+b;
+    sum = a+b;
+    return sum;
 }
-console.log(add(5,3));
+console.log(add(1,2));
 
 function square(a){
     return a*a;
 }
-console.log(square(22));
+console.log(square(11));
 
 const greet = (username) => console.log(`welcome ${username}`);
 greet("tarun");
 
-//callback practice
+//callback
 
 function processnumber(num,callback){
     console.log(`this is the given number ${num}`);
     callback(num);
 }
-function triplenumber(num){
-    console.log(`triple of the number ${num * 3}`);
+function doublenumber(num){
+    console.log(`triple of the number ${num * 2}`);
 }
-processnumber(5,triplenumber);
+processnumber(11,doublenumber);
 
-//mini project
+//project
 
-var num1 = parseFloat(prompt("enter the number 1"));
-var num2 = parseFloat(prompt("enter the number 2"));
+var number1 = parseFloat(prompt("enter the number 1"));
+var number2 = parseFloat(prompt("enter the number 2"));
 var operator = prompt("enter the operator +,-,*,/");
-switch (operator) {
+
+switch (operator){
     case "+":
-        alert(num1 + num2)
+        alert("the sum is " + (number1 + number2));
         break;
     case "-":
-        alert(num1 - num2)
+        alert("subtration is " + (number1 - number2));
         break;
     case "*":
-        alert(num1 * num2)
+        alert("muptiply " + (number1 * number2));
         break;
     case "/":
-        alert(num1 / num2)
+        alert("divide " + (number1 / number2));
         break;
     default:
-        alert("enter valid operator")
+        alert("enter the valid operator");
         break;
 }
